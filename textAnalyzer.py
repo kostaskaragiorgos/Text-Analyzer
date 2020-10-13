@@ -31,7 +31,7 @@ class TextAnalyzer():
             self.filename = filedialog.askopenfilename(initialdir="/", title="Select txt file",
                                                        filetypes=(("txt files", "*.txt"),
                                                                   ("all files", "*.*")))
-            if not ".csv" in self.filename:
+            if not ".txt" in self.filename:
                 self.filename = ""
                 msg.showerror("ERROR", "NO TXT IMPORTED")
             else:
