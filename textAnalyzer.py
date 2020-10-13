@@ -11,6 +11,7 @@ class TextAnalyzer():
         
         self.file_menu = Menu(self.menu,tearoff = 0)
         self.file_menu.add_command(label="Insert File", accelerator= 'Ctrl+O', command = self.insert_txt)
+        self.file_menu.add_command(label="Close File", accelerator = 'Ctrl+F4', command = self.closefile)
         self.file_menu.add_command(label="Exit",accelerator= 'Alt+F4',command = self.exitmenu)
         self.menu.add_cascade(label = "File",menu=self.file_menu)
         
@@ -27,6 +28,13 @@ class TextAnalyzer():
         self.master.bind('<Control-F1>',lambda event: self.helpmenu())
         self.master.bind('<Control-i>',lambda event: self.aboutmenu())
     
+    def closefile(self):
+        if not ".csv" in self.filename:
+            msg.showerror("ERROR", "NO TXT TO CLOSE")
+        else:
+            self.filename = ""
+            msg.showinfo("SUSSESS", "YOUR TXT FILE HAS SUCCESFULLY CLOSED")
+
     def insert_txt(self):
         if self.filename == "":
             self.filename = filedialog.askopenfilename(initialdir="/", title="Select txt file",
