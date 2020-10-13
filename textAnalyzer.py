@@ -1,5 +1,5 @@
 from tkinter import Menu, messagebox as msg, filedialog, Tk
-import nltk
+from nltk  import tokenize
 
 class TextAnalyzer():
     def __init__(self,master):
@@ -39,15 +39,16 @@ class TextAnalyzer():
         if not ".txt" in self.filename:
             msg.showerror("ERROR", "NO TXT IMPORTED")
         else:
-            line = self.file.read()
-            print(len(line))
+            
+            msg.showinfo("Characters:",len(self.line))
     
     def shownumberofwords(self):
         if not ".txt" in self.filename:
             msg.showerror("ERROR", "NO TXT IMPORTED")
         else:
-            pass
-
+            
+            words = tokenize.word_tokenize(self.line)
+            msg.showinfo("Words:",words)
     
     def closefile(self):
         if not ".txt" in self.filename:
@@ -65,7 +66,8 @@ class TextAnalyzer():
                 self.filename = ""
                 msg.showerror("ERROR", "NO TXT IMPORTED")
             else:
-                self.file  = open(str(self.filename), "r")
+                file  = open(str(self.filename), "r")
+                self.line = file.read()
                 msg.showinfo("SUCCESS", "TXT FILE ADDED SUCCESSFULLY")
         else:
             msg.showerror("ERROR", " A TXT FILE IS ALREADY OPEN")
