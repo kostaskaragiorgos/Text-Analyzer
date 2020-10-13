@@ -1,5 +1,4 @@
-from tkinter import *
-from tkinter import messagebox as msg
+from tkinter import Menu, messagebox as msg, filedialog, Tk
 
 class TextAnalyzer():
     def __init__(self,master):
@@ -7,7 +6,7 @@ class TextAnalyzer():
         self.master.title("TextAnalyzer")
         self.master.geometry("250x200")
         self.master.resizable(False,False)
-        
+        self.filename = ""
         self.menu = Menu(self.master)
         
         self.file_menu = Menu(self.menu,tearoff = 0)
@@ -27,6 +26,18 @@ class TextAnalyzer():
         self.master.bind('<Control-F1>',lambda event: self.helpmenu())
         self.master.bind('<Control-i>',lambda event: self.aboutmenu())
     
+    def insert_txt(self):
+        if self.filename == "":
+            self.filename = filedialog.askopenfilename(initialdir="/", title="Select txt file",
+                                                       filetypes=(("txt files", "*.txt"),
+                                                                  ("all files", "*.*")))
+            if not ".csv" in self.filename:
+                self.filename = ""
+                msg.showerror("ERROR", "NO TXT IMPORTED")
+            else:
+                msg.showinfo("SUCCESS", "TXT FILE ADDED SUCCESSFULLY")
+        else:
+            msg.showerror("ERROR", " A TXT FILE IS ALREADY OPEN")
     
     def exitmenu(self):
         if msg.askokcancel("Quit?", "Really quit?"):
@@ -42,7 +53,7 @@ class TextAnalyzer():
 
 def main():
     root=Tk()
-    T = TextAnalyzer(root)
+    TextAnalyzer(root)
     root.mainloop()
     
 if __name__=='__main__':
