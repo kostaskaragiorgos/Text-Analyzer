@@ -1,4 +1,5 @@
 from tkinter import Menu, messagebox as msg, filedialog, Tk
+import nltk
 
 class TextAnalyzer():
     def __init__(self,master):
@@ -14,8 +15,14 @@ class TextAnalyzer():
         self.file_menu.add_command(label="Close File", accelerator = 'Ctrl+F4', command = self.closefile)
         self.file_menu.add_command(label="Exit",accelerator= 'Alt+F4',command = self.exitmenu)
         self.menu.add_cascade(label = "File",menu=self.file_menu)
-        
-        self.about_menu = Menu(self.menu,tearoff = 0)
+
+        self.show_menu = Menu(self.menu, tearoff = 0)
+        self.show_menu.add_command(label= "Show Number of characters", command = self.showcharacters)
+        self.show_menu.add_command(label= "Show Number of words", command =self.shownumberofwords)
+        self.menu.add_cascade(label="Show", menu=self.show_menu)
+
+
+        self.about_menu = Menu(self.menu, tearoff = 0)
         self.about_menu.add_command(label = "About",accelerator= 'Ctrl+I',command=self.aboutmenu)
         self.menu.add_cascade(label="About",menu=self.about_menu)
         
@@ -27,9 +34,23 @@ class TextAnalyzer():
         self.master.bind('<Alt-F4>',lambda event: self.exitmenu())
         self.master.bind('<Control-F1>',lambda event: self.helpmenu())
         self.master.bind('<Control-i>',lambda event: self.aboutmenu())
+
+    def showcharacters(self):
+        if not ".txt" in self.filename:
+            msg.showerror("ERROR", "NO TXT IMPORTED")
+        else:
+            line = self.file.read()
+            print(len(line))
+    
+    def shownumberofwords(self):
+        if not ".txt" in self.filename:
+            msg.showerror("ERROR", "NO TXT IMPORTED")
+        else:
+            pass
+
     
     def closefile(self):
-        if not ".csv" in self.filename:
+        if not ".txt" in self.filename:
             msg.showerror("ERROR", "NO TXT TO CLOSE")
         else:
             self.filename = ""
@@ -44,6 +65,7 @@ class TextAnalyzer():
                 self.filename = ""
                 msg.showerror("ERROR", "NO TXT IMPORTED")
             else:
+                self.file  = open(str(self.filename), "r")
                 msg.showinfo("SUCCESS", "TXT FILE ADDED SUCCESSFULLY")
         else:
             msg.showerror("ERROR", " A TXT FILE IS ALREADY OPEN")
