@@ -18,8 +18,9 @@ class TextAnalyzer():
         self.menu.add_cascade(label = "File",menu=self.file_menu)
 
         self.show_menu = Menu(self.menu, tearoff = 0)
-        self.show_menu.add_command(label= "Show Number of characters", command = self.showcharacters)
+        self.show_menu.add_command(label= "Show Number of characters(including spaces)", command = self.showcharacters)
         self.show_menu.add_command(label= "Show Number of words", command =self.shownumberofwords)
+        self.show_menu.add_command(label="Show Number of characters(excluding spaces)", command=self.showcharactersex)
         self.menu.add_cascade(label="Show", menu=self.show_menu)
 
 
