@@ -46,9 +46,7 @@ class TextAnalyzer():
         if not ".txt" in self.filename:
             msg.showerror("ERROR", "NO TXT IMPORTED")
         else:
-            
-            words = tokenize.word_tokenize(self.line)
-            msg.showinfo("Words:",words)
+            msg.showinfo("Words:",tokenize.word_tokenize(self.line))
     
     def closefile(self):
         if not ".txt" in self.filename:
