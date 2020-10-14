@@ -1,5 +1,6 @@
 from tkinter import Menu, messagebox as msg, filedialog, Tk
 from nltk  import tokenize
+from analyze import showcharacters
 
 class TextAnalyzer():
     def __init__(self,master):
@@ -39,8 +40,7 @@ class TextAnalyzer():
         if not ".txt" in self.filename:
             msg.showerror("ERROR", "NO TXT IMPORTED")
         else:
-            
-            msg.showinfo("Characters:",len(self.line))
+            msg.showinfo("Characters:",showcharacters(self.line))
     
     def shownumberofwords(self):
         if not ".txt" in self.filename:
