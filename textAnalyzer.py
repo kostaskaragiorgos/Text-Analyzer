@@ -1,6 +1,7 @@
 from tkinter import Menu, messagebox as msg, filedialog, Tk
 from nltk  import tokenize
 from analyze import showcharacters, showcharactersex
+import csv
 
 class TextAnalyzer():
     def __init__(self,master):
@@ -39,25 +40,39 @@ class TextAnalyzer():
         self.master.bind('<Control-i>',lambda event: self.aboutmenu())
     
     def saveas(self):
-        pass
+        if self.filename == "":
+            msg.showerror("ERROR", "NO CSV FILE")
+        else:
+            self.filenamesave = filedialog.asksaveasfilename(initialdir="/", title="Select file",
+                                                             filetypes=(("csv files", "*.csv"),
+                                                                        ("all files", "*.*")))
+            if self.filenamesave is None or self.filenamesave == "":
+                msg.showerror("ERROR", "NO FILE SAVED")
+            else:
+                with open(str(self.filenamesave)+'.csv', 'a+') as f:
+                    thewriter = csv.writer(f)
+                    thewriter.writerow(["Number of words:", str(len(tokenize.word_tokenize(self.line)))])
+                msg.showinfo("SUCCESS", "CSV FILE SAVED SUCCESSFULLY")
+
+
     def showcharacters(self):
         if not ".txt" in self.filename:
             msg.showerror("ERROR", "NO TXT IMPORTED")
         else:
-            msg.showinfo("Characters(including spaces):",showcharacters(self.line))
+            msg.showinfo("Characters(including spaces):", showcharacters(self.line))
 
     def showcharactersex(self):
         if not ".txt" in self.filename:
             msg.showerror("ERROR", "NO TXT IMPORTED")
         else:
-            msg.showinfo("Characters(exincluding spaces):",showcharactersex(self.line))
+            msg.showinfo("Characters(exincluding spaces):", showcharactersex(self.line))
 
     
     def shownumberofwords(self):
         if not ".txt" in self.filename:
             msg.showerror("ERROR", "NO TXT IMPORTED")
         else:
-            msg.showinfo("Words:",tokenize.word_tokenize(self.line))
+            msg.showinfo("Words:",len(tokenize.word_tokenize(self.line)))
     
     def closefile(self):
         if not ".txt" in self.filename:
