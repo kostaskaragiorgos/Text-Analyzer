@@ -4,40 +4,39 @@ from analyze import showcharacters, showcharactersex
 import csv
 
 class TextAnalyzer():
-    def __init__(self,master):
+    def __init__(self, master):
         self.master = master
         self.master.title("TextAnalyzer")
         self.master.geometry("250x200")
-        self.master.resizable(False,False)
+        self.master.resizable(False, False)
         self.filename = ""
         self.menu = Menu(self.master)
         
-        self.file_menu = Menu(self.menu,tearoff = 0)
-        self.file_menu.add_command(label="Insert File", accelerator= 'Ctrl+O', command = self.insert_txt)
-        self.file_menu.add_command(label="Close File", accelerator = 'Ctrl+F4', command = self.closefile)
+        self.file_menu = Menu(self.menu, tearoff=0)
+        self.file_menu.add_command(label="Insert File", accelerator='Ctrl+O', command=self.insert_txt)
+        self.file_menu.add_command(label="Close File", accelerator = 'Ctrl+F4', command=self.closefile)
         self.file_menu.add_command(label="Save as", accelerator='Ctrl+S', command=self.saveas)
-        self.file_menu.add_command(label="Exit",accelerator= 'Alt+F4',command = self.exitmenu)
-        self.menu.add_cascade(label = "File",menu=self.file_menu)
+        self.file_menu.add_command(label="Exit", accelerator='Alt+F4', command=self.exitmenu)
+        self.menu.add_cascade(label="File", menu=self.file_menu)
 
-        self.show_menu = Menu(self.menu, tearoff = 0)
-        self.show_menu.add_command(label= "Show Number of characters(including spaces)", command = self.showcharacters)
-        self.show_menu.add_command(label= "Show Number of words", command =self.shownumberofwords)
+        self.show_menu = Menu(self.menu, tearoff=0)
+        self.show_menu.add_command(label="Show Number of characters(including spaces)", command=self.showcharacters)
+        self.show_menu.add_command(label="Show Number of words", command=self.shownumberofwords)
         self.show_menu.add_command(label="Show Number of characters(excluding spaces)", command=self.showcharactersex)
         self.menu.add_cascade(label="Show", menu=self.show_menu)
 
+        self.about_menu = Menu(self.menu, tearoff=0)
+        self.about_menu.add_command(label="About", accelerator='Ctrl+I', command=self.aboutmenu)
+        self.menu.add_cascade(label="About", menu=self.about_menu)
 
-        self.about_menu = Menu(self.menu, tearoff = 0)
-        self.about_menu.add_command(label = "About",accelerator= 'Ctrl+I',command=self.aboutmenu)
-        self.menu.add_cascade(label="About",menu=self.about_menu)
-        
-        self.help_menu = Menu(self.menu,tearoff = 0)
-        self.help_menu.add_command(label = "Help",accelerator = 'Ctrl+F1',command=self.helpmenu)
-        self.menu.add_cascade(label="Help",menu=self.help_menu)
+        self.help_menu = Menu(self.menu, tearoff=0)
+        self.help_menu.add_command(label="Help", accelerator='Ctrl+F1', command=self.helpmenu)
+        self.menu.add_cascade(label="Help", menu=self.help_menu)
         
         self.master.config(menu=self.menu)
-        self.master.bind('<Alt-F4>',lambda event: self.exitmenu())
-        self.master.bind('<Control-F1>',lambda event: self.helpmenu())
-        self.master.bind('<Control-i>',lambda event: self.aboutmenu())
+        self.master.bind('<Alt-F4>', lambda event: self.exitmenu())
+        self.master.bind('<Control-F1>', lambda event: self.helpmenu())
+        self.master.bind('<Control-i>', lambda event: self.aboutmenu())
     
     def saveas(self):
         if self.filename == "":
@@ -111,9 +110,9 @@ class TextAnalyzer():
         
 
 def main():
-    root=Tk()
+    root = Tk()
     TextAnalyzer(root)
     root.mainloop()
     
-if __name__=='__main__':
+if __name__ == '__main__':
     main()
