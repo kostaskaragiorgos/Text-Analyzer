@@ -105,8 +105,7 @@ class TextAnalyzer():
         pass
     
     def aboutmenu(self):
-        pass
-
+        msg.showinfo("About", "Version 1.0")
         
 
 def main():
