@@ -1,7 +1,8 @@
 from tkinter import Menu, messagebox as msg, filedialog, Tk
+import csv
 from nltk  import tokenize
 from analyze import showcharacters, showcharactersex
-import csv
+
 
 class TextAnalyzer():
     def __init__(self, master):
@@ -11,18 +12,17 @@ class TextAnalyzer():
         self.master.resizable(False, False)
         self.filename = ""
         self.menu = Menu(self.master)
-        
         self.file_menu = Menu(self.menu, tearoff=0)
         self.file_menu.add_command(label="Insert File", accelerator='Ctrl+O', command=self.insert_txt)
-        self.file_menu.add_command(label="Close File", accelerator = 'Ctrl+F4', command=self.closefile)
+        self.file_menu.add_command(label="Close File", accelerator='Ctrl+F4', command=self.closefile)
         self.file_menu.add_command(label="Save as", accelerator='Ctrl+S', command=self.saveas)
         self.file_menu.add_command(label="Exit", accelerator='Alt+F4', command=self.exitmenu)
         self.menu.add_cascade(label="File", menu=self.file_menu)
 
         self.show_menu = Menu(self.menu, tearoff=0)
-        self.show_menu.add_command(label="Show Number of characters(including spaces)", command=self.showcharacters)
-        self.show_menu.add_command(label="Show Number of words", command=self.shownumberofwords)
-        self.show_menu.add_command(label="Show Number of characters(excluding spaces)", command=self.showcharactersex)
+        self.show_menu.add_command(label="Show Number of characters(including spaces)", accelerator='Ctrl+R', command=self.showcharacters)
+        self.show_menu.add_command(label="Show Number of words", accelerator='Alt+R', command=self.shownumberofwords)
+        self.show_menu.add_command(label="Show Number of characters(excluding spaces)", accelerator='Ctrl+U', command=self.showcharactersex)
         self.menu.add_cascade(label="Show", menu=self.show_menu)
 
         self.about_menu = Menu(self.menu, tearoff=0)
@@ -73,7 +73,7 @@ class TextAnalyzer():
         if not ".txt" in self.filename:
             msg.showerror("ERROR", "NO TXT IMPORTED")
         else:
-            msg.showinfo("Words:",len(tokenize.word_tokenize(self.line)))
+            msg.showinfo("Words:", len(tokenize.word_tokenize(self.line)))
     
     def closefile(self):
         if not ".txt" in self.filename:
@@ -91,7 +91,7 @@ class TextAnalyzer():
                 self.filename = ""
                 msg.showerror("ERROR", "NO TXT IMPORTED")
             else:
-                file  = open(str(self.filename), "r")
+                file = open(str(self.filename), "r")
                 self.line = file.read()
                 msg.showinfo("SUCCESS", "TXT FILE ADDED SUCCESSFULLY")
         else:
@@ -105,6 +105,7 @@ class TextAnalyzer():
         pass
     
     def aboutmenu(self):
+        """ about menu function """
         msg.showinfo("About", "Version 1.0")
         
 
