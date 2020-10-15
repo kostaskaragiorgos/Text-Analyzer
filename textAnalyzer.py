@@ -51,7 +51,9 @@ class TextAnalyzer():
             else:
                 with open(str(self.filenamesave)+'.csv', 'a+') as f:
                     thewriter = csv.writer(f)
-                    thewriter.writerow(["Number of words:", str(len(tokenize.word_tokenize(self.line)))])
+                    thewriter.writerow(["Number of words", str(len(tokenize.word_tokenize(self.line)))])
+                    thewriter.writerow(["Characters(including spaces)", str(showcharacters(self.line))])
+                    thewriter.writerow(["Characters(exincluding spaces)", str(showcharactersex(self.line))])
                 msg.showinfo("SUCCESS", "CSV FILE SAVED SUCCESSFULLY")
 
 
