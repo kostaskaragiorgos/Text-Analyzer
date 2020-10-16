@@ -38,7 +38,9 @@ class TextAnalyzer():
         self.master.bind('<Control-F4>', lambda event: self.closefile())
         self.master.bind('<Control-s>', lambda event: self.saveas())
         self.master.bind('<Alt-F4>', lambda event: self.exitmenu())
-        
+        self.master.bind('<Control-r>', lambda event: self.showcharacters())
+        self.master.bind('<Alt-r>', lambda event:  self.shownumberofwords())
+        self.master.bind('<Control-u>', lambda event: self.showcharactersex())
         self.master.bind('<Control-F1>', lambda event: self.helpmenu())
         self.master.bind('<Control-i>', lambda event: self.aboutmenu())
     
