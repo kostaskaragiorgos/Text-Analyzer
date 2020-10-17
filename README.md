@@ -8,19 +8,20 @@
 <!--ts-->
   * [Text-Analyzer](#Text-Analyzer)
   * [Table of contents](#Table_of_contents)
-  * [Files/Folders](#Files/Folders)
   * [Dependencies](#Dependencies)
+  * [Files/Folders](#Files/Folders)
+  * [Current Version](#CurrentVersion)
+  * [Documentation](#Documentation)
   * [Radon](#Radon)
     * [Radon cc](#Radon_cc)
     * [Radon hal](#Radon_hal)
     * [Radon mi](#Radon_mi)
     * [Radon raw](#Radon_raw)
+  * [Keybinds](#Keybinds)
   * [License](#License)
 
 
-## Files/Folders
-<ul>
-</ul>
+
 
 # Dependencies
 
@@ -35,23 +36,39 @@ or run
 pip install -r requirements.txt
 ```
 
-## Radon
+# Files/Folders
+<ul>
+</ul>
 
-### Radon_cc
+# Current Version
+
+
+# Documentation
+
+All project documentation is located in the `./doc`  folder.
+
+
+# Radon
+
+## Radon_cc
 
 <p><img src = "images/radon/radon cc.png" title = "Radon cc"/> </p>
 
-### Radon_hal
+## Radon_hal
 
 <p><img src = "images/radon/radon hal.png" title = "Radon hal"/> </p>
 
-### Radon_mi
+## Radon_mi
 
 <p><img src = "images/radon/radon mi.png" title = "Radon mi"/> </p>
 
-### Radon_raw
+## Radon_raw
 
 <p><img src = "images/radon/radon raw.png" title = "Radon raw"/> </p>
 
-## License
+# Keybinds
+<ul>
+</ul>
+
+# License
 [GNU GPLv3](https://choosealicense.com/licenses/gpl-3.0/)
