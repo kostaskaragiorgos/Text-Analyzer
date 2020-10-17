@@ -42,6 +42,7 @@ pip install -r requirements.txt
 
 # Current Version
 
+<p><img src = "images/Text Analyzer Version.png" title = "Current Version"/> </p>
 
 # Documentation
 
