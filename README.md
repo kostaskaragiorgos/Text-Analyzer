@@ -27,7 +27,10 @@
 
 To install the dependencies
 
-
+<ul>
+<li> nltk (conda install -c anaconda nltk) </li>
+<li> second way to install nltk (pip install nltk) </li>
+</ul>
 
 or run
 
