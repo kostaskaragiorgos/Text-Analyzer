@@ -41,6 +41,11 @@ pip install -r requirements.txt
 
 # Files/Folders
 <ul>
+  <li> doc(documentation folder) </li>
+  <li> images(images folder) </li>
+  <li> analyzer.py (.py file with useful functions) </li>
+  <li> textAnalyzer.py (the gui file) </li>
+  <li> keybubds.txt(keybinds file) </li>
 </ul>
 
 # Current Version
