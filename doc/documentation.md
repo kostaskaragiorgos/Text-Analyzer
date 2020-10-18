@@ -34,6 +34,24 @@ else
 
 ## Save as
 
+You can save the analysis to a .csv file using menu File --> Save as or using Ctrl+s keybind
+
+<p><img src = "doc images/File menu/save.png" title="Save"/> </p>
+
+if no .txt file is imported an informative message pops up
+
+<p><img src = "doc images/File menu/no txt file.png" title="No file imported"/> </p>
+
+else an save file window pops up an asks you to save the file with a .csv extension. You can cancel or either save the file
+
+Cancel
+
+<p><img src = "doc images/File menu/no csv save.png" title="No file saved"/> </p>
+
+Save
+
+<p><img src = "doc images/File menu/save csv.png" title="Saved csv file"/> </p>
+
 
 ## Exit
 
