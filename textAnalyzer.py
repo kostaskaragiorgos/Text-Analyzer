@@ -45,6 +45,7 @@ class TextAnalyzer():
         self.master.bind('<Control-i>', lambda event: self.aboutmenu())
     
     def saveas(self):
+        """ saves the analysis """
         if self.filename == "":
             msg.showerror("ERROR", "NO CSV FILE")
         else:
@@ -63,25 +64,29 @@ class TextAnalyzer():
 
 
     def showcharacters(self):
+        """ shows the number of characters including spaces """
         if not ".txt" in self.filename:
             msg.showerror("ERROR", "NO TXT IMPORTED")
         else:
             msg.showinfo("Characters(including spaces):", showcharacters(self.line))
 
     def showcharactersex(self):
+        """ shows the number of characters excluding spaces """
         if not ".txt" in self.filename:
             msg.showerror("ERROR", "NO TXT IMPORTED")
         else:
-            msg.showinfo("Characters(exincluding spaces):", showcharactersex(self.line))
+            msg.showinfo("Characters(excluding spaces):", showcharactersex(self.line))
 
     
     def shownumberofwords(self):
+        """ shows the number of words """
         if not ".txt" in self.filename:
             msg.showerror("ERROR", "NO TXT IMPORTED")
         else:
             msg.showinfo("Words:", len(tokenize.word_tokenize(self.line)))
     
     def closefile(self):
+        """ closes the file """
         if not ".txt" in self.filename:
             msg.showerror("ERROR", "NO TXT TO CLOSE")
         else:
@@ -89,6 +94,7 @@ class TextAnalyzer():
             msg.showinfo("SUSSESS", "YOUR TXT FILE HAS SUCCESFULLY CLOSED")
 
     def insert_txt(self):
+        """ inserts a  .txt file """
         if self.filename == "":
             self.filename = filedialog.askopenfilename(initialdir="/", title="Select txt file",
                                                        filetypes=(("txt files", "*.txt"),
@@ -104,6 +110,7 @@ class TextAnalyzer():
             msg.showerror("ERROR", " A TXT FILE IS ALREADY OPEN")
     
     def exitmenu(self):
+        """ exit menu function """
         if msg.askokcancel("Quit?", "Really quit?"):
             self.master.destroy()
     
