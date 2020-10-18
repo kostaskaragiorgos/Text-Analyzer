@@ -1,0 +1,21 @@
+File menu
+======================
+Insert a file Ctrl + O
+Close a file Ctrl + F4
+Save as Ctrl + S
+Exit Alt + F4
+=========
+Show menu
+====================================================
+Show Number of characters(including spaces) Ctrl + R
+Show Number of words Alt + R
+Show Number of characters(excluding spaces) Ctrl + U
+====================================================
+About menu
+==============
+About Ctrl + I
+==============
+Help menu 
+==============
+Help Ctrl + F1
+==============
