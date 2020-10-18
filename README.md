@@ -72,6 +72,15 @@ All project documentation is located in the `./doc`  folder.
 
 # Keybinds
 <ul>
+ <li> Insert a file Ctrl + O </li>
+ <li> Close a file Ctrl + F4 </li>
+ <li> Save as Ctrl + S </li>
+ <li> Exit Alt + F4 </li>
+ <li> Show Number of characters(including spaces) Ctrl + R </li>
+ <li> Show Number of words Alt + R </li>
+ <li> Show Number of characters(excluding spaces) Ctrl + U </li>
+ <li> About Ctrl + I </li>
+ <li> Help Ctrl + F1 </li>
 </ul>
 
 # License
