@@ -67,6 +67,36 @@ You press ok to close the app or cancel if you don't want
 
 # Show menu
 
+## Show number of characters 
+
+if no .txt file is imported an informative message pops up
+
+<p><img src = "doc images/Show menu/no txt file.png" title="No file imported"/> </p>
+
+else an informative message pops up
+
+<p><img src="doc images/Show menu/char including.png" title="char including"/></p>
+
+## Show number of words
+
+if no .txt file is imported an informative message pops up
+
+<p><img src = "doc images/Show menu/no txt file.png" title="No file imported"/> </p>
+
+else an informative message pops up
+
+<p><img src="doc images/Show menu/nofwords.png" title="number of words"/></p>
+
+## Show number of characters 
+
+if no .txt file is imported an informative message pops up
+
+<p><img src = "doc images/Show menu/no txt file.png" title="No file imported"/> </p>
+
+else an informative message pops up
+
+
+<p><img src="doc images/Show menu/char excluding.png" title="char excluding"/></p>
 
 # About menu
 
