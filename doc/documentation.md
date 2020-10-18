@@ -2,9 +2,35 @@
 
 # File menu
 
-## Insert File
 
-## Close File
+## Insert a file
+
+
+You can insert a file using menu File --> Insert a file or using Ctrl+O keybind
+
+<p><img src = "doc images/File menu/insert a file.png" title = "Insert a csv file"/></p>
+
+if you cancel insertion an informative message pops up
+
+<p><img src = "doc images/File menu/insert a file error.png" title = "Insert file cancelation"/> </p>
+
+else
+
+<p><img src = "doc images/File menu/successful insertion.png" title="Successful Insertion"/> </p>
+
+## Close a file
+
+You can close a .csv file using menu File --> Close file or using Ctrl+F5 keybind
+
+The menu is disable if there is no file imported but you can use the keybind
+
+if file is not imported an informative message pops up
+
+<p><img src= "doc images/File menu/no file to close.png" title="No file to close"/></p>
+
+else
+
+<p><img src="doc images/File menu/close file successful.png" title="Close file"/></p>
 
 ## Save as
 
