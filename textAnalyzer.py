@@ -47,7 +47,7 @@ class TextAnalyzer():
     def saveas(self):
         """ saves the analysis """
         if self.filename == "":
-            msg.showerror("ERROR", "NO CSV FILE")
+            msg.showerror("ERROR", "NO TXT FILE")
         else:
             self.filenamesave = filedialog.asksaveasfilename(initialdir="/", title="Select file",
                                                              filetypes=(("csv files", "*.csv"),
