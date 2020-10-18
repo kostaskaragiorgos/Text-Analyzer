@@ -2,6 +2,11 @@
 
 # File menu
 
+## Insert File
+
+## Close File
+
+## Save as
 
 
 ## Exit
